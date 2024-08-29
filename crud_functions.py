@@ -26,7 +26,7 @@ def initiate_db():
     cursor.execute('INSERT INTO Products(title, description, price) VALUES (?, ?, ?)',
                    (f'{title[3]}', f'{description[3]}', f'{price[3]}'))
 
-    connection = sqlite3.connect('initiate.db')
+    connection = sqlite3.connect('users.db')
     cursor = connection.cursor()
     cursor.execute('''
             CREATE TABLE IF NOT EXISTS Users(
