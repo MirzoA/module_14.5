@@ -7,7 +7,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
 from crud_functions import *
 
-API = "7324975451:AAGKrOUsQMP9jvtI-140NdJeQSebIkHejjs"
+API = ""
 bot = Bot(token=API)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -153,7 +153,6 @@ async def set_age(message, state):
     await state.update_data(age=message.text)
     data = await state.get_data()
     add_user(data['username'], data['email'], data['age'])
-    # await message.reply(f"Регистрация завершена! Ваш баланс: 1000", reply_markup=keyboard)
     await message.answer(f'Регистрация прошла успешно!', reply_markup=kb)
     await state.finish()
 
